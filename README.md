@@ -75,7 +75,7 @@ Sigue estos pasos para poner en marcha el proyecto en tu máquina local:
     php artisan migrate
     ```
 
-6.  **Actualizar el php.ini:**
+7**Actualizar el php.ini:**
 
     Buscar en el php.ini la variable upload_tmp_dir, y actualizarla con la carpeta temporal, en el caso de laragon es
 
@@ -83,7 +83,15 @@ Sigue estos pasos para poner en marcha el proyecto en tu máquina local:
     upload_tmp_dir=C:/laragon/tmp
     ```
 
-7.  **Inicia el servidor de desarrollo:**
+7**Crear el link simbolico:**
+
+    Correr el siguiente comando para crear el link entre la carpeta pública y el storage
+
+    ```bash
+    php artisan storage:link
+    ```
+
+9**Inicia el servidor de desarrollo:**
 
     Si usas algún entorno como Laragon, esto no es requerido, simplemente con estar en la carpeta www e iniciar funcionará, si no cuentas con laragon puedes correr el servidor de Laravel
     ```bash
