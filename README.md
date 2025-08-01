@@ -55,6 +55,17 @@ Sigue estos pasos para poner en marcha el proyecto en tu máquina local:
     DB_USERNAME=tu_usuario
     DB_PASSWORD=tu_contraseña
     ```
+    
+    Igualmente configurar otras varaibles como
+
+    ```ini
+    APP_NAME=HelloWorldCup
+    APP_ENV=local
+    APP_DEBUG=true
+    APP_URL=http://hello-world-cup-backend.test
+    ```
+    
+    Nota que app url puede ser distinto, depende de como tengas configurado tu entorno
 
 6.  **Ejecuta las migraciones de la base de datos:**
 
@@ -64,10 +75,19 @@ Sigue estos pasos para poner en marcha el proyecto en tu máquina local:
     php artisan migrate
     ```
 
+6.  **Actualizar el php.ini:**
+
+    Buscar en el php.ini la variable upload_tmp_dir, y actualizarla con la carpeta temporal, en el caso de laragon es
+
+    ```
+    upload_tmp_dir=C:/laragon/tmp
+    ```
+
 7.  **Inicia el servidor de desarrollo:**
 
+    Si usas algún entorno como Laragon, esto no es requerido, simplemente con estar en la carpeta www e iniciar funcionará, si no cuentas con laragon puedes correr el servidor de Laravel
     ```bash
     php artisan serve
     ```
 
-¡Listo! La aplicación estará disponible en `http://127.0.0.1:8000`.
+¡Listo! La aplicación estará disponible en el puerto/url configurado
