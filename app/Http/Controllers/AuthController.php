@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Auth\PostLoginRequest;
 use App\Http\Requests\Auth\PostRegisterRequest;
 use App\Http\Controllers\BaseController;
+use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -65,6 +66,17 @@ class AuthController extends BaseController
                 'token' => $token,
             ],
             'User logged successfully.'
+        );
+    }
+
+    public function getUserInfo(Request $request) {
+        // Used for validating session
+
+        $user = Auth::user();
+
+        return $this->sendResponse(
+            ['user' => $user],
+            'User info queried successfully.'
         );
     }
 }
