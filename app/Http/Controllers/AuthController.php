@@ -26,14 +26,21 @@ class AuthController extends BaseController
                 $file,
                 $filename
             );
+        } else {
+            $profileImagePath = 'user.png';
         }
 
-        $user = User::create([
+        $userObj = [
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
+            'user_name' => $validatedData['user_name'],
+            'role' => $validatedData['role'],
+            'nick_name' => $validatedData['nick_name'],
             'profile_image' => $profileImagePath
-        ]);
+        ];
+
+        $user = User::create($userObj);
 
         return $this->sendResponse(
             ['user' => $user],

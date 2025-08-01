@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('profile_image')
-                ->nullable(false)
-                ->after('password');
+            $table->string('user_name')->nullable('false')->unique();
+            $table->enum('role', ['student', 'teacher'])->nullable(false);
+            $table->string('nick_name')->nullable(false)->unique();
         });
     }
 
@@ -24,7 +24,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('profile_image');
+            $table->dropColumn('user_name');
+            $table->dropColumn('role');
+            $table->dropColumn('nick_name');
         });
     }
 };

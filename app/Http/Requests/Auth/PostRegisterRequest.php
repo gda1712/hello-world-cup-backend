@@ -25,7 +25,10 @@ class PostRegisterRequest extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4096'
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4096',
+            'user_name' => 'required|string|max:255|unique:users',
+            'role' => 'required|string',
+            'nick_name' => 'required|string'
         ];
     }
 }
