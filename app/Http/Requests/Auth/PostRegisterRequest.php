@@ -27,7 +27,7 @@ class PostRegisterRequest extends FormRequest
             'password' => 'required|string|min:8|confirmed',
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4096',
             'user_name' => 'required|string|max:255|unique:users',
-            'role' => 'required|string,in:student,teacher',
+            'role' => 'required|string|in:student,teacher',
             'nick_name' => 'required|string'
         ];
     }
