@@ -83,7 +83,7 @@ Sigue estos pasos para poner en marcha el proyecto en tu máquina local:
     upload_tmp_dir=C:/laragon/tmp
     ```
 
-7**Crear el link simbolico:**
+8**Crear el link simbolico:**
 
     Correr el siguiente comando para crear el link entre la carpeta pública y el storage
 
