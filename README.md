@@ -2,7 +2,7 @@
 
 ¡Bienvenido al repositorio de la Hello World Cup 2025!
 
-Este es el backend de la aplicación, desarrollado con **Laravel**.
+Este es el backend de la aplicación, desarrollado con **Laravel**., documentacion de postman esta en el postman_collection de la raiz
 
 ## Requisitos del sistema
 
