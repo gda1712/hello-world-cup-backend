@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserFollowController;
+use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\UserController;
 
 Route::post('/register', [AuthController::class, 'register']);
@@ -17,4 +18,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/users', [UserController::class, 'index']);
 
     Route::post('/follow', [UserFollowController::class, 'addUserFollow']);
+
+    // Publications
+    Route::post('/publication', [PublicationController::class, 'create']);
 });
